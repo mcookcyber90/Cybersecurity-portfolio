@@ -1,0 +1,63 @@
+Network Traffic Analysis Using Wireshark
+
+Overview
+This project demonstrates foundational network monitoring skills using Wireshark in a simulated lab environment. The objective was to capture and analyze network traffic to better understand packet structure, protocol behavior, and filtering techniques commonly used in security operations.
+
+Lab Environment
+- Kali Linux (VMware)
+- NAT Networking Configuration
+- Wireshark Network Analyzer
+
+Objective
+Capture live network traffic and isolate specific protocols to analyze packet details, source/destination information, and communication patterns.
+
+ Steps Performed
+
+ 1. Verified Network Configuration
+Used the following command to confirm IP configuration:
+
+```bash
+ip a
+
+2. Generated Network Traffic
+  Attempted to generate outbound traffic using ping to simulate ICMP activity
+  ping 8.8.8.8
+  This step is used to create packet activity for analysis
+
+Applied Packet Filters
+  Used Wireshark display filters to isolate specific traffic types: 
+    icmp
+    dns
+    tcp.port == 80
+This allowed focused inspection of protocol specific trafic
+
+Key Observations
+  Identified source and destination IP addresses within packet headers.
+  Observed protocol distribution across captured traffic.
+  Reviewed packet details including TTL, flags and sequence numbers.
+  Practiced isolating specific traffic types using filters.
+
+Skills Demonstrated
+  Packet analysis
+  Network protocol filtering
+  Understanding of TCP/IP fundamentals
+  Analytical thinking
+  Security documentation practices
+
+
+Challenges Encountered & Troubleshooting
+
+During initial testing, the virtual machine was unable to reach external IP addresses, returning a “network unreachable” error. 
+
+To troubleshoot:
+- Verified network configuration using `ip a`
+- Reviewed VMware network adapter settings
+- Confirmed NAT configuration and adapter connection status
+- Tested connectivity using direct IP addresses (e.g. 8.8.8.8)
+
+This process reinforced the importance of verifying network routing and virtualization settings before conducting traffic analysis. It also strengthened my understanding of how virtual network adapters and NAT configurations impact connectivity within lab environments.
+
+
+This lab strengthened my understanding of how network traffic is structured and how security analysts isolate 
+relevant data during investigations. Filtering and inspecting packets at different layers provided practical insight into real-world
+monitoring techniques used in SOC environments. 
